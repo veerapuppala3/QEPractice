@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<listeners>
+
+<listener class-name="testngprg.Listeners"></listener>
+</listeners>
+<parameter name="url" value="example.com"/>
+  <test name="Mobile and Desktop Tests">
+  <packages>
+  <package name="testngprg"></package>
+  </packages>
+    
+  </test>
+  
+</suite> <!-- Suite -->

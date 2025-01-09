@@ -20,8 +20,6 @@ public class RelativeLocators {
 		driver.findElement(with(By.tagName("input")).below(dateofBirth)).click();
 		driver.findElement(with(By.tagName("input")).toLeftOf(checkboxtext)).click();
 		System.out.println(driver.findElement(with(By.tagName("label")).toRightOf(radioButton)).getText());
-		//label[@for='exampleCheck1']
-		
 		
 	}
 
