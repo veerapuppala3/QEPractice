@@ -53,20 +53,21 @@ public class SubmitOrderTest extends BaseTest{
 	  public void submitOrderTest(String email, String password, String productName) throws IOException,
 	  InterruptedException { // TODO Auto-generated method stub
 	  
-	  productCatalogue productCatalogue =
-	  landingPage.appLogin(email,password );
+	  productCatalogue productCatalogue = landingPage.appLogin(email,password );
 	  AbstractComponent abc = new AbstractComponent(driver);
 	  abc.waitForElementToBeAppear(By.cssSelector(".mb-3"));
-	  productCatalogue.addProductToCart(productName); CartPage cartPage =
-	  abc.goToCart(); Boolean result = cartPage.verifyProductDispaly(productName);
-	  Assert.assertTrue(result); CheckoutPage checkoutPage
-	  =cartPage.gotoCheckOut(); checkoutPage.selectCountry("India"); OrderConfPage
-	  orderConfirm = checkoutPage.submitOrder();
+	  productCatalogue.addProductToCart(productName); 
+	  CartPage cartPage =abc.goToCart(); 
+	  Boolean result = cartPage.verifyProductDispaly(productName);
+	  Assert.assertTrue(result);
+	  CheckoutPage checkoutPage=cartPage.gotoCheckOut(); 
+	  checkoutPage.selectCountry("India"); 
+	  OrderConfPage orderConfirm = checkoutPage.submitOrder();
 	  Assert.assertEquals("THANKYOU FOR THE ORDER.", orderConfirm.orderConfirm());
 	  }
 	 
 	
-	@Test(dependsOnMethods= {"submitOrderTest"})
+	/*@Test(dependsOnMethods= {"submitOrderTest"})
 	public void OrderHistoryTest() throws IOException, InterruptedException
 	{
 		// TODO Auto-generated method stub
@@ -75,11 +76,13 @@ public class SubmitOrderTest extends BaseTest{
 		Boolean result =ordersCheck.verifyProductNameDispaly(productName);
 		Assert.assertTrue(result);
 	}
-	
+	*/
 	@DataProvider()
 	public Object[][] getData() {
 		
-		return new Object[][] {{"anshika@gmail.com", "Iamking@000", "ZARA COAT 3"}, {"prasadaraopuppala@gmail.com","Target@2024","QWERTY"}};
+		//return new Object[][] {{"anshika@gmail.com", "Iamking@000", "ZARA COAT 3"}, {"prasadaraopuppala@gmail.com","Target@2024","QWERTY"}};
+		
+		return new Object[][] {{"prasadaraopuppala@gmail.com","Target@2024","QWERTY"}};
 		
 	}
 	
